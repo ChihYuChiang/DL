@@ -6,22 +6,23 @@ import time
 Vectorization exp
 --------------------------------------------------
 '''
-a = np.random.rand(1000000)
-b = np.random.rand(1000000)
+if __name__ == "__main__":
+    a = np.random.rand(1000000)
+    b = np.random.rand(1000000)
 
-tic = time.time()
-c = np.dot(a, b)
-toc = time.time()
+    tic = time.time()
+    c = np.dot(a, b)
+    toc = time.time()
 
-print("Vectorized: " + str(1000 * (toc - tic)) + " ms")
+    print("Vectorized: " + str(1000 * (toc - tic)) + " ms")
 
-c = 0
-tic = time.time()
-for i in range(1000000):
-    c += a[i] * b[i]
-toc = time.time()
+    c = 0
+    tic = time.time()
+    for i in range(1000000):
+        c += a[i] * b[i]
+    toc = time.time()
 
-print("Un-vectorized: " + str(1000 * (toc - tic)) + " ms")
+    print("Un-vectorized: " + str(1000 * (toc - tic)) + " ms")
 
 
 
@@ -188,3 +189,25 @@ def L2(yhat, y):
 yhat = np.array([.9, 0.2, 0.1, .4, .9])
 y = np.array([1, 0, 0, 1, 1])
 print("L2 = " + str(L2(yhat,y)))
+
+
+def initialize_with_zeros(dim):
+    """
+    This function creates a vector of zeros of shape (dim, 1) for w and initializes b to 0.
+    
+    Argument:
+    dim -- size of the w vector we want (or number of parameters in this case)
+    
+    Returns:
+    w -- initialized vector of shape (dim, 1)
+    b -- initialized scalar (corresponds to the bias)
+    """
+    
+    w = np.zeros((dim, 1))
+    b = 0
+    return w, b
+
+dim = 2
+w, b = initialize_with_zeros(dim)
+print ("w = " + str(w))
+print ("b = " + str(b))
