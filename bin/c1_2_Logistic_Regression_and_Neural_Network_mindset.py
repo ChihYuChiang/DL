@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 import h5py
 from PIL import Image
 from scipy import ndimage
-from lr_utils import load_dataset
-from Python_Basics_With_Numpy import sigmoid
-from Python_Basics_With_Numpy import initialize_with_zeros
+from c1_2_lr_utils import load_dataset
+from c1_2_Python_Basics_With_Numpy import sigmoid
+from c1_2Python_Basics_With_Numpy import initialize_with_zeros
 
 
 '''
