@@ -98,6 +98,7 @@ Compile and train
 --------------------------------------------------
 '''
 #Create the model instance
+#64 * 64 pixels, RGB channels
 happyModel = HappyModel((64, 64, 3))
 
 #Compile the model
