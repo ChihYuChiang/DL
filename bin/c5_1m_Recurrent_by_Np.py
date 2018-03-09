@@ -80,7 +80,7 @@ def rnn_forward(x, a0, parameters):
     #loop over all time-steps
     for t in range(T_x):
         #Update next hidden state, compute the prediction, get the cache
-        a_next, yt_pred, cache = rnn_cell_forward(x[:, :, t], a_nextWhat is Python's range() Function?, parameters)
+        a_next, yt_pred, cache = rnn_cell_forward(x[:, :, t], a_next, parameters)
 
         #Save the value of the new "next" hidden state in a
         a[:, :, t] = a_next
